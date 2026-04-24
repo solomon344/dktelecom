@@ -63,8 +63,8 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
           <Button
-            as={Link}
-            href="#contact"
+            // as={Link}
+            // href="#contact"
             className="bg-brand text-white rounded-full text-sm font-medium px-6 hover:bg-brand-dark transition-colors"
             size="sm"
           >
