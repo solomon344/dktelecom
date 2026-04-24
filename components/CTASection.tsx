@@ -1,8 +1,10 @@
 "use client";
 
 import { Button, Input } from "@heroui/react";
+import { useTawkto } from "@/hooks/useTawkto";
 
 export default function CTASection() {
+  const { openChat } = useTawkto();
   return (
     <section id="contact" className="bg-navy py-28 px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -32,7 +34,7 @@ export default function CTASection() {
             //   input: "text-white placeholder:text-white/40",
             // }}
           />
-          <Button className="bg-brand text-white rounded-full px-8 font-medium hover:bg-brand-dark whitespace-nowrap">
+          <Button onPress={openChat} className="bg-brand text-white rounded-full px-8 font-medium hover:bg-brand-dark whitespace-nowrap">
             Contact Us
           </Button>
         </div>

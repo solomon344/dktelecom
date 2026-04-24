@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { useTawkto } from "@/hooks/useTawkto";
 
 const footerLinks = {
   Company: ["About Us", "Our Team", "Careers", "News"],
@@ -8,6 +11,7 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const { openChat } = useTawkto();
   return (
     <footer className="bg-[#030812] px-6 pt-16 pb-8">
       <div className="max-w-7xl mx-auto">
@@ -34,12 +38,21 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 {links.map((link) => (
                   <li key={link}>
-                    <Link
-                      href="#"
-                      className="text-white/30 text-sm no-underline hover:text-white/80 transition-colors"
-                    >
-                      {link}
-                    </Link>
+                    {link === "Contact Us" ? (
+                      <button
+                        onClick={openChat}
+                        className="text-white/30 text-sm hover:text-white/80 transition-colors bg-transparent border-none p-0 cursor-pointer"
+                      >
+                        {link}
+                      </button>
+                    ) : (
+                      <Link
+                        href="#"
+                        className="text-white/30 text-sm no-underline hover:text-white/80 transition-colors"
+                      >
+                        {link}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

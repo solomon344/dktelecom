@@ -4,10 +4,12 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 import { useState, useEffect } from "react";
 import { Logo } from "./Logo";
+import { useTawkto } from "@/hooks/useTawkto";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openChat } = useTawkto();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -63,8 +65,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
           <Button
-            // as={Link}
-            // href="#contact"
+            onPress={openChat}
             className="bg-brand text-white rounded-full text-sm font-medium px-6 hover:bg-brand-dark transition-colors"
             size="sm"
           >

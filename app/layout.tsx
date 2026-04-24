@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fontHeading, fontDisplay, fontMono, fontSans } from "@/config/fonts";
 // import { HeroUIProvider } from "@heroui/react";
 import "./globals.css";
+import CustomProvider from "./provider";
 
 
 
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fontHeading.variable} ${fontDisplay.variable} ${fontMono.variable} ${fontSans.variable}`}>
       <body className="antialiased bg-white font-heading text-navy">
-       {children}
+       
+        <CustomProvider>{children}</CustomProvider>
+      
       </body>
     </html>
   );
