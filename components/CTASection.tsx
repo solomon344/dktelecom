@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { useTawkto } from "@/hooks/useTawkto";
 
 export default function CTASection() {
@@ -24,23 +24,14 @@ export default function CTASection() {
           No need to worry — DK Telecom covers all your connectivity needs. Reach out and our team will get you set up quickly.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-          <Input
-            placeholder="Your phone number or email"
-            className="flex-1"
-            
-            // classNames={{
-            //   inputWrapper: "bg-white/10 border-white/20 text-white rounded-full px-5",
-            //   input: "text-white placeholder:text-white/40",
-            // }}
-          />
+        <div className="flex justify-center mb-6">
           <Button onPress={openChat} className="bg-brand text-white rounded-full px-8 font-medium hover:bg-brand-dark whitespace-nowrap">
             Contact Us
           </Button>
         </div>
 
         <p className="text-white/30 text-xs">
-          Or call us directly: <span className="text-white/60">+220 000 0000</span>
+          Live chat available 24/7 — or call us: <span className="text-white/60">+220 954 4000</span>
         </p>
       </div>
     </section>
