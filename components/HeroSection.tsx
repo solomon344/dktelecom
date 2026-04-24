@@ -30,23 +30,25 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-wrap gap-4">
+            <Link href={"/#plans"}>
             <Button
-              as={Link}
-              href="#plans"
+              // as={Link}
+              // href="#plans"
               className="bg-brand text-white rounded-full px-8 font-medium hover:bg-brand-dark transition-colors"
               size="lg"
             >
               View Plans
             </Button>
+            </Link>
+           <Link href={"/#about"}>
             <Button
-              as={Link}
-              href="#about"
+              // as={Link}
               variant={'outline'}
               className="text-white border-white/20 rounded-full px-8 font-medium hover:bg-white/5 transition-colors"
               size="lg"
             >
               Learn More
-            </Button>
+            </Button></Link>
           </div>
 
           {/* Stats */}
